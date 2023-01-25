@@ -71,16 +71,24 @@
                     echo "<tr>";
                     echo "<td>" . $hotel['name'] . "</td>";
                     echo "<td>" . $hotel['description'] . "</td>";
-                    echo "<td>" . $hotel['parking'] . "</td>";
+                    echo "<td>" . avaibleParking($hotel) . "</td>";
                     echo "<td>" . $hotel['vote'] . "</td>";
                     echo "<td>" . $hotel['distance_to_center'] . "</td>";
                     echo "</tr>";
                 }
                 echo "</tbody>";
+
+                function avaibleParking($parking)
+                {
+                    if ($parking['parking'] === true) {
+                        return "yes";
+                    } else {
+                        return "no";
+                    }
+                }
                 ?>
             </table>
         </div>
-
     </main>
 </body>
 
