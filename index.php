@@ -53,9 +53,23 @@
             ],
         ];
         ?>
-
+        <div class="container">
+            <form action="index.php" method="get">
+                <label for="input_text">Enter some text</label>
+                <input type="text" name="input_text" cols="30" rows="10"></input>
+                <label for="censored-word">Enter the word to censor</label>
+                <input type="text" name="censored_word">
+                <button type="submit">Send</button>
+            </form>
+        </div>
         <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1>List Hotel disponibili</h1>
+                </div>
+            </div>
             <table class="table table-dark">
+
                 <?php
                 echo " <thead>
                             <tr>
@@ -73,7 +87,7 @@
                     echo "<td>" . $hotel['description'] . "</td>";
                     echo "<td>" . avaibleParking($hotel) . "</td>";
                     echo "<td>" . $hotel['vote'] . "</td>";
-                    echo "<td>" . $hotel['distance_to_center'] . "</td>";
+                    echo "<td>" . $hotel['distance_to_center'] . " Km" . "</td>";
                     echo "</tr>";
                 }
                 echo "</tbody>";
