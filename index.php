@@ -54,11 +54,11 @@
         ];
         ?>
         <div class="container">
-            <form action="index.php" method="get">
-                <label for="input_text">Enter some text</label>
-                <input type="text" name="input_text" cols="30" rows="10"></input>
-                <label for="censored-word">Enter the word to censor</label>
-                <input type="text" name="censored_word">
+            <form action="control.php" method="get">
+                <label for="input_text">Hotels with parking</label>
+                <input type="checkbox" name="posto" value="yes"></input>
+                <label for="censored-word">Hotel without parking</label>
+                <input type="checkbox" name="posto" value="no">
                 <button type="submit">Send</button>
             </form>
         </div>
@@ -80,26 +80,19 @@
                                 <th scope='col'>Distance to center</th>
                             </tr>
                     </thead>";
-                echo "<tbody>";
+
+
                 foreach ($hotels as $hotel) {
                     echo "<tr>";
                     echo "<td>" . $hotel['name'] . "</td>";
                     echo "<td>" . $hotel['description'] . "</td>";
-                    echo "<td>" . avaibleParking($hotel) . "</td>";
+                    echo "<td>" . $hotel['parking'] . "</td>";
                     echo "<td>" . $hotel['vote'] . "</td>";
                     echo "<td>" . $hotel['distance_to_center'] . " Km" . "</td>";
                     echo "</tr>";
                 }
-                echo "</tbody>";
 
-                function avaibleParking($parking)
-                {
-                    if ($parking['parking'] === true) {
-                        return "yes";
-                    } else {
-                        return "no";
-                    }
-                }
+
                 ?>
             </table>
         </div>
