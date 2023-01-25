@@ -54,12 +54,6 @@
 
             $posto = $_GET['posto'];
 
-            // if ($posto === "yes") {
-            //     $posto = true;
-            // } elseif ($posto === "no") {
-            //     $posto = false;
-            // }
-
             foreach ($hotels as $hotel) {
                 if ($hotel['parking'] === true && $posto === 'yes') {
                     echo "<tr>";
@@ -79,16 +73,6 @@
                     echo "</tr>";
                 }
             }
-
-            // function avaibleParking($parking)
-            // {
-            //     if ($parking['parking'] === true) {
-            //         return "yes";
-            //     } else {
-            //         return "no";
-            //     }
-            // }
-
             ?>
         </table>
 
